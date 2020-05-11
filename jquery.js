@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
 var homeCity = "Oceanside";
 var enterCity;
 var lat = response.coord.lat;
@@ -9,6 +9,7 @@ var qetUV = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey;
 var queryfive = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=current,minutely,hourly&appid=" +APIKey;
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKey + "&q=" + cityNow;
 
+$(document).ready(function () {
 var city = document.querySelector("#city-input").value;  //store user input from HTML page
 $(document).on("click","#searchq", searchCity); // click event naming function to engage search
 
@@ -46,11 +47,11 @@ function clearOldList() {      // empty old searches so no doubles, etc.
   recentSearches.forEach(function(city,i) {   //function that makes list of button-cities clickable
   
     var a = $("<button>");
-    a.addClass(list-item-action);
+    a.addClass("list-item-action");
     a.addClass("ListBtn");
     a.attr("cityWeather",city);
     a.text(city);
-    $("div #cities-view").append(a);  //put my list of cities in form <ul> in html
+    $("#cities-view").append(a);  //put my list of cities in form <ul> in html
   });
   }
 clearOldList();
