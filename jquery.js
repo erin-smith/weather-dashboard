@@ -1,10 +1,10 @@
-
+var cityNow = $("#city-input").value; 
+var APIKey = "07ddd2102ddf91d384e4734ebe2258cc";
 var homeCity = "Oceanside";
 var enterCity;
 var lat = response.coord.lat;
 var lon = response.coord.lon;
 var recentSearches = [];
-var APIKey = "07ddd2102ddf91d384e4734ebe2258cc";
 var qetUV = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey;
 var queryfive = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=current,minutely,hourly&appid=" +APIKey;
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKey + "&q=" + cityNow;
@@ -25,7 +25,7 @@ if (city === "") {
 
 $(document).on("click",".ListBtn", reLookcity); // on click event- recall button from list cities
 
-  var cityNow = $("#city-input").val(); 
+  var cityNow = $("#city-input").value; 
   var APIKey = "07ddd2102ddf91d384e4734ebe2258cc";
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKey + "&q=" + cityNow;
   showCity(cityNow);
